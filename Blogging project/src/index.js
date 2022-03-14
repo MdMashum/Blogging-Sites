@@ -8,18 +8,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-// mongoose.connect("mongodb+srv://rubygupta7505:GDDYMfHDEGehjUj0@cluster0.xf64f.mongodb.net/pgauravpatel-db?authSource=admin&replicaSet=atlas-g68iwo-shard-0&w=majority", {
-//     useNewUrlParser: true
-// })
-// .then( () => console.log("MongoDb is connected"))
-// .catch ( err => console.log(err) )
+mongoose.connect("mongodb+srv://khushboobabil12:khushboo12345@cluster0.j9hng.mongodb.net/Blogging-Sites",
+ {
+    useNewUrlParser: true
+})
+.then( () => console.log("MongoDb is connected"))
+.catch ( err => console.log(err) )
 
-// app.use (
-//     function (req, res, next) {
-//         console.log ("inside GLOBAL MW");
-//         next();
-//   }
-//   );
 
 app.use('/', route);
 
