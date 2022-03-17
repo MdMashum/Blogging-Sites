@@ -2,33 +2,23 @@ const express = require('express');
 const router = express.Router();
 const authorController = require("../controllers/authorController")
 const blogController = require("../controllers/blogsController")
-const MiddleWere = require("../middlewares/Auth")
+const MiddleWare = require("../middlewares/Auth.js")
 
 //API's-creating Author
-router.post("/createAuthor",authorController.createAuthor)
-router.post("/login",authorController.authorLogin);
+router.post("/authors", authorController.createAuthor)
 
-//API's-Blog
-router.post("/createBlog",MiddleWere.authorAuthorization,blogController.createBlog);
+router.post("/login", authorController.authorLogin);
 
-router.get("/getAllBlog",MiddleWere.authorAuthorization,blogController.getSpecificAllBlogs);
+//API's Blog
+router.post("/blogs", MiddleWare.autherAuthentication, blogController.createBlog);
 
+router.get("/blogs", MiddleWare.autherAuthentication, blogController.getSpecificAllBlogs);
 
-router.put("/updateBlog/:blogId",MiddleWere.authoriseForUpdateandDelete, blogController.updateBlog);
-router.delete("/deleted/blogs/:blogId",MiddleWere.authoriseForUpdateandDelete, blogController.deleteBlog);
-router.delete("/deletedByQuery",MiddleWere.authoriseForUpdateandDelete,blogController.deletedByQueryParams);
+router.put("/blogs/:blogId", MiddleWare.authorAuthorization, blogController.updateBlog);
 
+router.delete("/blogs/:blogId", MiddleWare.authorAuthorization, blogController.deleteBlog);
 
-
-
-
-
-
-
-
-
-
-
+router.delete("/blogs", MiddleWare.authorAuthorization, blogController.deletedByQueryParams);
 
 
 module.exports = router;
