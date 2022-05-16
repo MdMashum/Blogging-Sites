@@ -6,4 +6,5 @@ Repository for backend cohort - Thorium
 
 ## Models
  * Author Model
-`{ fname: { mandatory}, lname: {mandatory}, title: {mandatory, enum[Mr, Mrs, Miss]}, email: {mandatory, valid email, unique}, password: {mandatory} }` 
+ 
+[^1] { fname: { mandatory}, lname: {mandatory}, title: {mandatory, enum[Mr, Mrs, Miss]}, email: {mandatory, valid email, unique}, password: {mandatory} } 
