@@ -1,4 +1,7 @@
 # Thorium
-## The second largest heading
- The smallest heading
-### Repository for backend cohort - Thorium
+Repository for backend cohort - Thorium
+## Blogging Site Mini Project Requirement
+
+## Phase I
+
+## Models
